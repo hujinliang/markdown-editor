@@ -1,0 +1,23 @@
+{
+  "name": "markdown-editor",
+  "homepage": "https://github.com/HUJINLIANG/markdown-editor",
+  "authors": [
+    "hjl <1617451312@qq.oom>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^3.1.0",
+    "font-awesome": "^4.6.3",
+    "sweetalert": "^1.1.3"
+  }
+}

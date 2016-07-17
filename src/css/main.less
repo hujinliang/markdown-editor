@@ -1,0 +1,42 @@
+body {
+  font-family: microsoft yahei, Helvetica, sans-serif;
+  background: #fff;
+}
+html,
+body,
+body > #app,
+body > #app > .container-fluid {
+  height: 100%;
+  overflow: hidden;
+}
+#app > .container-fluid {
+  position: relative;
+  height: 100%;
+  .work-space {
+    height: 90%;
+    .col-xs-6 {
+      height: 100%;
+      .well {
+        height: 100%;
+        #inputter,
+        #outputter {
+          width: 100%;
+          height: 90%;
+          border: none;
+          resize: none;
+          overflow-y: auto;
+          overflow-x: hidden;
+          &::-webkit-scrollbar {
+            background-color: #eee;
+            width: 5px;
+            border-radius: 10px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}

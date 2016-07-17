@@ -8,23 +8,26 @@ export default class Container extends React.Component{
         super(props);
     }
     render(){
+        var {insert} = this.props;
         return (
-        <div className="row">
+        <div className="row controller">
             <div className="btn-group">
-                <button className="btn btn-default btn-raised">标题</button>
-                <button className="btn btn-default">引用</button>
-                <button className="btn btn-default">斜体</button>
-                <button className="btn btn-default">粗体</button>
-                <button className="btn btn-default">无序列表</button>
-                <button className="btn btn-default">有序列表</button>
-                <button className="btn btn-default">链接</button>
-                <button className="btn btn-default">图片</button>
-                <button className="btn btn-default">代码</button>
-                <button className="btn btn-default">分割线</button>
+                <button className="btn btn-default" onClick={insert("# ")}>标题</button>
+                <button className="btn btn-default" onClick={insert(">")}>引用</button>
+                <button className="btn btn-default" onClick={insert("*文本*")}>斜体</button>
+                <button className="btn btn-default" onClick={insert("**文本**")}>粗体</button>
+                <button className="btn btn-default" onClick={insert("* ")}>无序列表</button>
+                <button className="btn btn-default" onClick={insert("1. ")}>有序列表</button>
+                <button className="btn btn-default" onClick={insert("[baidu](http://www.baidu.com)")}>链接</button>
+                <button className="btn btn-default" onClick={insert("![cat](cat.png)")}>图片</button>
+                <button className="btn btn-default" onClick={insert("`code`")}>代码</button>
+                <button className="btn btn-default" onClick={insert("\n    ")}>代码块</button>
+                <button className="btn btn-default" onClick={insert("\n***\n")}>分割线</button>
+                <button className="btn btn-default" onClick={insert("| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |\n")}>表格</button>
             </div>
-            <div class="pull-right">
-                <button className="btn btn-info">编辑模式</button>
-                <button className="btn btn-success">预览模式</button>
+            <div className="pull-right">
+                <button className="btn btn-info controller-item">编辑模式</button>
+                <button className="btn btn-success controller-item">预览模式</button>
             </div>
         </div>
         )

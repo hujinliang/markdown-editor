@@ -8,7 +8,7 @@ export default class Container extends React.Component{
         super(props);
     }
     render(){
-        var {insert,changeMode,mode,changeData,downloadURL} = this.props;
+        var {insert,changeMode,mode,changeData,downloadURL,clearAll} = this.props;
         var controllerClass = "btn-group";
         controllerClass += mode?"":" hidden";
         return (
@@ -28,6 +28,7 @@ export default class Container extends React.Component{
                 <button className="btn btn-default" onClick={insert("| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |\n")}><i className="icon-table"></i>表格</button>
             </div>
             <div className="pull-right">
+                <button className="btn btn-danger controller-item" onClick={clearAll}><i className="glyphicon glyphicon-trash"></i>清空文本</button>
                 <a className="btn btn-default" href={downloadURL} download="README.md" onMouseEnter={changeData}><i className="icon1-markdown"></i>导出md</a>
                 <button className="btn btn-info controller-item" onClick={changeMode(1)}><i className="icon1-quill"></i>编辑模式</button>
                 <button className="btn btn-success controller-item" onClick={changeMode(0)}><i className="icon1-eye"></i>预览模式</button>

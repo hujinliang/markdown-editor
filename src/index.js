@@ -22,6 +22,7 @@ class MarkdownApplication extends React.Component{
         this.tag = this.tag.bind(this);
         this.changeMode = this.changeMode.bind(this);
         this.changeData = this.changeData.bind(this);
+        this.clearAll = this.clearAll.bind(this)
     }
     changeValue(e){
         console.log(e.target.value)
@@ -52,6 +53,11 @@ class MarkdownApplication extends React.Component{
             downloadURL:objURL
         })
     }
+    clearAll(){
+        this.setState({
+            text:''
+        })
+    }
     render(){
         var class1,class2;
         if(this.state.editor){
@@ -64,7 +70,7 @@ class MarkdownApplication extends React.Component{
         return (
         <div id="app">
             <div className="container-fluid">
-                <Controller insert={this.tag} changeMode={this.changeMode} mode={this.state.editor} changeData={this.changeData} downloadURL={this.state.downloadURL} />
+                <Controller insert={this.tag} changeMode={this.changeMode} mode={this.state.editor} changeData={this.changeData} downloadURL={this.state.downloadURL} clearAll={this.clearAll} />
                 <div className="row work-container">
                     <div className={class1}>
                         <div className="page editor">

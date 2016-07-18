@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import './css/main.less'
 import markIt from'../lib/marked'
 import Controller from './components/controller';
+import Footer from './components/footer';
 
 
 
@@ -80,6 +81,7 @@ class MarkdownApplication extends React.Component{
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         </div>
         )

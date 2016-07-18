@@ -28,9 +28,9 @@ export default class Container extends React.Component{
                 <button className="btn btn-default" onClick={insert("| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |\n")}><i className="icon-table"></i>表格</button>
             </div>
             <div className="pull-right">
-                <a className="btn btn-default" href={downloadURL} download="README.md" onMouseEnter={changeData}>导出md</a>
-                <button className="btn btn-info controller-item" onClick={changeMode(1)}>编辑模式</button>
-                <button className="btn btn-success controller-item" onClick={changeMode(0)}>预览模式</button>
+                <a className="btn btn-default" href={downloadURL} download="README.md" onMouseEnter={changeData}><i className="icon1-markdown"></i>导出md</a>
+                <button className="btn btn-info controller-item" onClick={changeMode(1)}><i className="icon1-quill"></i>编辑模式</button>
+                <button className="btn btn-success controller-item" onClick={changeMode(0)}><i className="icon1-eye"></i>预览模式</button>
             </div>
         </div>
         )

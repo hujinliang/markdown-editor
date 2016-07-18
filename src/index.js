@@ -14,10 +14,11 @@ class MarkdownApplication extends React.Component{
         super(props);
         this.state = {
             text:'',
-            markdown:''
+            editor:1
         }
         this.changeValue = this.changeValue.bind(this);
         this.tag = this.tag.bind(this);
+        this.changeMode = this.changeMode.bind(this)
     }
     changeValue(e){
         console.log(e.target.value)
@@ -33,20 +34,35 @@ class MarkdownApplication extends React.Component{
             this.refs.input.focus();
         }.bind(this)
     }
+    changeMode(num){
+        return function() {
+            this.setState({
+                editor: num
+            })
+        }.bind(this)
+    }
     render(){
+        var class1,class2;
+        if(this.state.editor){
+            class1 = "col-xs-6";
+            class2 = "col-xs-6";
+        }else{
+            class2 = "col-xs-12";
+            class1 = "hidden";
+        }
         return (
         <div id="app">
             <div className="container-fluid">
-                <Controller insert={this.tag} />
+                <Controller insert={this.tag} changeMode={this.changeMode} mode={this.state.editor} />
                 <div className="row work-container">
-                    <div className="col-xs-6">
+                    <div className={class1}>
                         <div className="page editor">
                             <p className="title">编辑栏</p>
                             <hr/>
                             <textarea ref="input" id="marking" value={this.state.text} onChange={this.changeValue}></textarea>
                         </div>
                     </div>
-                    <div className="col-xs-6">
+                    <div className={class2}>
                         <div className="page">
                             <p className="title">预览栏</p>
                             <hr/>

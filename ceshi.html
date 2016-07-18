@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="mdDataUrl" download="index.md">aaa</a>
+</body>
+<script>
+    window.onload = function(){
+        var b = new Blob([2,33,444]);
+        var object = URL.createObjectURL(b);
+        document.getElementsByTagName('a')[0].href = object;
+    }
+</script>
+</html>

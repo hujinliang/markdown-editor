@@ -16,7 +16,9 @@ class MarkdownApplication extends React.Component{
         this.state = {
             text:'',
             editor:1,
-            downloadURL:''
+            downloadURL:'',
+            startPoint:0,
+            endPoint:0
         }
         this.changeValue = this.changeValue.bind(this);
         this.tag = this.tag.bind(this);
@@ -25,18 +27,56 @@ class MarkdownApplication extends React.Component{
         this.clearAll = this.clearAll.bind(this)
     }
     changeValue(e){
-        console.log(e.target.value)
+
         this.setState({text:e.target.value});
     }
     tag(item){
         return function(){
+
+        var myField = this.refs.input;
+        var startPoint;
+        var endPoint;
             var text = this.state.text;
-            var newText = text + String(item);
+            var newText = text;
+
+            if (document.selection) { 
+            myField.focus() 
+            sel = document.selection.createRange() 
+            sel.text = item 
+            sel.select() 
+            } 
+             else if (myField.selectionStart || myField.selectionStart == '0') { 
+            var startPos = myField.selectionStart 
+            var endPos = myField.selectionEnd 
+
+            var restoreTop = myField.scrollTop 
+            newText = text.substring(0, startPos) + item + text.substring(endPos,text.length) 
+            if (restoreTop > 0) { 
+
+              myField.scrollTop = restoreTop 
+            } 
+              myField.focus() 
+              startPoint = startPos + item.length 
+              endPoint = startPos + item.length 
+          } else { 
+              newText += item 
+              myField.focus() 
+            } 
+
+
             this.setState({
-                text:newText
+                text:newText,
+                startPoint:startPoint,
+                endPoint:endPoint
             });
-            this.refs.input.focus();
+            
         }.bind(this)
+    }
+    componentDidUpdate(){
+    
+        this.refs.input.selectionStart = this.state.startPoint;
+        this.refs.input.selectionEnd = this.state.endPoint;
+        this.refs.input.focus()
     }
     changeMode(num){
         return function() {
@@ -76,7 +116,7 @@ class MarkdownApplication extends React.Component{
                         <div className="page editor">
                             <p className="title">编辑栏</p>
                             <hr/>
-                            <textarea ref="input" id="marking" value={this.state.text} onChange={this.changeValue}></textarea>
+                            <textarea ref="input" autofocus selectionStart='100' id="marking" value={this.state.text} onChange={this.changeValue}></textarea>
                         </div>
                     </div>
                     <div className={class2}>

@@ -72,11 +72,15 @@ class MarkdownApplication extends React.Component{
             
         }.bind(this)
     }
-    componentDidUpdate(){
-    
-        this.refs.input.selectionStart = this.state.startPoint;
-        this.refs.input.selectionEnd = this.state.endPoint;
-        this.refs.input.focus()
+    componentDidUpdate(prevProps,prevState){
+        console.log('update');
+        if(this.state.startPoint != prevState.startPoint)
+        {
+            this.refs.input.selectionStart = this.state.startPoint;
+            this.refs.input.selectionEnd = this.state.endPoint;
+            this.refs.input.focus();
+        }
+       
     }
     changeMode(num){
         return function() {
@@ -86,7 +90,7 @@ class MarkdownApplication extends React.Component{
         }.bind(this)
     }
     changeData(){
-        var value = markIt(this.state.text);
+        var value = this.state.text;
         var blob = new Blob([value]);
         var objURL = URL.createObjectURL(blob);
         this.setState({

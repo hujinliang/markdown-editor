@@ -120,7 +120,7 @@ class MarkdownApplication extends React.Component{
                         <div className="page editor">
                             <p className="title">编辑栏</p>
                             <hr/>
-                            <textarea ref="input" autofocus selectionStart='100' id="marking" value={this.state.text} onChange={this.changeValue}></textarea>
+                            <textarea ref="input" id="marking" value={this.state.text} onChange={this.changeValue}></textarea>
                         </div>
                     </div>
                     <div className={class2}>

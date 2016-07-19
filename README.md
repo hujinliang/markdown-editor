@@ -31,7 +31,7 @@
 
 ## ScreenShots
 
-![1](./screenshots/shot.png)
+![1](./screenshots/shot1.png)
 
 项目demo：[Markdown-editor](http://htmlpreview.github.io/?https://github.com/HUJINLIANG/markdown-editor/blob/master/index.html)
 

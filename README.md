@@ -16,10 +16,22 @@
 2.  同时提供编辑栏和预览栏，方便用户边编写边查看效果。
 3.  提供模式选择，方便用户查看效果。
 4.  可以导出为md文件，在线编辑后可以直接导出使用。
-5.  支持文件导出，编写完毕可直接保存。
+
 
 ---
 ### 运行
+
+_dev_
+
+`git clone https://github.com/HUJINLIANG/markdown-editor.git`
+
+`npm install`
+
+`node server`
+
+**打开localhost:3000即可运行**
+
+*product*
 
 `git clone https://github.com/HUJINLIANG/markdown-editor.git`
 
@@ -27,13 +39,13 @@
 
 `npm start`
 
-**打开localhost:3000即可运行**
+**打开localhost:1337即可运行**
 
 ## ScreenShots
 
 ![1](./screenshots/shot1.png)
 
-项目demo：[Markdown-editor](http://htmlpreview.github.io/?https://github.com/HUJINLIANG/markdown-editor/blob/master/index.html)
+项目demo：[Markdown-editor](https://hjl-markdown-editor.herokuapp.com/)
 
 --- 
 ### 后期可能进行扩展的功能

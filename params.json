@@ -1,0 +1,6 @@
+{
+  "name": "Markdown-editor",
+  "tagline": "Markdown-Editor 一个简单的markdown编辑器",
+  "body": "# Markdown-editor--简单的web端markdown编辑器\r\n\r\n***\r\n\r\n使用了React+webpack开发的小项目，其中还对ES6，Less进行了简单的应用实践\r\n\r\n灵感：\r\n\r\n- Webstorm的markdown插件。\r\n\r\n\r\n\r\n功能：\r\n\r\n1.  提供基本的功能键，方便文本的编辑。\r\n2.  同时提供编辑栏和预览栏，方便用户边编写边查看效果。\r\n3.  提供模式选择，方便用户查看效果。\r\n4.  可以导出为md文件，在线编辑后可以直接导出使用。\r\n5.  支持文件导出，编写完毕可直接保存。\r\n\r\n---\r\n### 运行\r\n\r\n`git clone https://github.com/HUJINLIANG/markdown-editor.git`\r\n\r\n`npm install`\r\n\r\n`npm start`\r\n\r\n**打开localhost:3000即可运行**\r\n\r\n## ScreenShots\r\n\r\n![1](./screenshots/shot1.png)\r\n\r\n项目demo：[Markdown-editor](http://htmlpreview.github.io/?https://github.com/HUJINLIANG/markdown-editor/blob/master/index.html)\r\n\r\n--- \r\n### 后期可能进行扩展的功能\r\n- 用户登录：用户可进行登录（第三方登录，如qq,github等等）。\r\n- 文件存储：用户登录后可以将文件存储至数据库中。",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
